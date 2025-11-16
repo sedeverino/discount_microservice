@@ -1,0 +1,13 @@
+# Ignorar entorno virtual
+virtual_env/
+.virtual_env/
+
+# Archivos típicos a ignorar en Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs
+.vscode/
+.idea/
