@@ -2,7 +2,7 @@ from sqlite3 import Date
 from sqlalchemy import Column, Integer, String, Float, Boolean, Date, Enum
 from app.database import Base
 
-class DiscountCondition(Base):
+class Condition(Base):
     __tablename__ = "discount_condition"
 
     id = Column(Integer, primary_key=True, index=True)

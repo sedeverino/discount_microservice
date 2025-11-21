@@ -1,8 +1,8 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from app.models.discount_condition import DiscountCondition
+from app.models.condition import DiscountCondition
 
-class DiscountConditionRepository:
+class ConditionRepository:
     def __init__(self, session: AsyncSession):
         self.session = session
 
