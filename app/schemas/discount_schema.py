@@ -1,38 +1,8 @@
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import date
-from app.enums.discount_type import DiscountType
+from app.schemas.discount_rule_schema import DiscountRuleCreate, DiscountRuleUpdate
 
-# ---------- CONDITION ----------
-class DiscountConditionBase(BaseModel):
-    field_name: str
-    operator: str
-    value_condition: str
-    condition_type: str
-
-class DiscountConditionCreate(DiscountConditionBase):
-    pass
-
-class DiscountConditionUpdate(DiscountConditionBase):
-    id: int
-
-# ---------- RULE ----------
-class DiscountRuleBase(BaseModel):
-    value_amount: float
-    min_purchase_amount: Optional[float] = None
-    max_discount_amount: Optional[float] = None
-    max_uses: Optional[int] = None
-    valid_from: Optional[date] = None
-    valid_to: Optional[date] = None
-
-class DiscountRuleCreate(DiscountRuleBase):
-    conditions: List[DiscountConditionCreate] = []
-
-class DiscountRuleUpdate(DiscountRuleBase):
-    id: int
-    conditions: List[DiscountConditionUpdate] = []
-
-# ---------- DISCOUNT ----------
 class DiscountBase(BaseModel):
     code: str
     description: Optional[str] = None
