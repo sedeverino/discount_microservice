@@ -15,3 +15,6 @@ class DiscountRule(Base):
     uses_count = Column(Integer, default=0)
     valid_from = Column(Date)  # start date
     valid_to = Column(Date)    # end date
+    field_name = Column(String)  # e.g.,        'user_type',        'purchase_date'
+    operator = Column(Enum)    # e.g.,          'equals',           'greater_than'
+    value_condition = Column(String) # e.g.,    'premium',          '2024-12-25'
